@@ -1,0 +1,43 @@
+# history 
+    1  ps auxw
+    2  netstat 
+    3  netstat -anp
+    4  curl http://localhost:1337/
+    5  apk add curl
+    6  curl http://localhost:1337/
+    7  curl http://localhost:1337/code
+    9  echo NDIK | base64 -d
+   10  curl http://localhost:1337/check/42
+   12  curl -H "X-OrigemDaVida: 42" http://localhost:1337/nicejob
+   13  history 
+
+
+
+
+-------------------------------------------------------------------------------------
+ ------------------
+| DevOps Challenge |
+ ------------------
+
+1) Apartir da app https://github.com/tempestsecurity/simpleapp-python.git:
+   Crie um Dockerfile
+   Envie a imagem para o dockerhub.
+2) Apartir da imagem criada na questao 1, crie os seguintes yaml(k8s):
+   Deployment(simpleapp.yaml) com 1 pod, readiness e liveness utilizando o path /health
+   Service(simpleapp-svc.yaml) do tipo ClusterIP
+   Configmap(simpleapp-cm.yaml) com valor Code:1337
+   Crie um ingress(challenge-ingress.yaml) utilizando o ingress-nginx com as entradas:
+	Host: app.prova, Backend: simpleapp
+	Host: kibana.prova, Backend: kibana
+	Namespace(ns.yaml) prova
+	Obs:. utilizar o configmap(simpleapp-cm) como envFrom no deployment(simpleapp).
+3) Configure um cluster k8s utilizando o minikube (utilizando script), e faça o deploy dos yaml da questão 2.
+4) Configure uma monitoração nesse cluster(via helm) utilizando:
+   Prometheus e Grafana(crie um dashboard simples)
+5) Os logs da aplicação devem ser vistos através do kibana(deve estar deployado no k8s).
+6) Crie um programa(Python3 ou Go) que liste as EC2 em uma conta AWS.
+
+Obs:. será um bonus se sua infra for feita via Terraform(VPC,SUBNET,SG etc) e k8s utilizando EKS, sua solução deve ser entregue em um repositório no GitHub com uma breve explicação de como executar e também funcional(será testada!!!).
+
+Envie o resultado (seu repo) da prova para daniel.faria@tempest.com.br
+

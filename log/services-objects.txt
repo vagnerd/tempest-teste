@@ -1,0 +1,25 @@
+|---------------|------------------------------------|--------------|---------------------------|
+|   NAMESPACE   |                NAME                | TARGET PORT  |            URL            |
+|---------------|------------------------------------|--------------|---------------------------|
+| default       | elasticsearch                      | port-1/9200  | http://192.168.49.2:32177 |
+|               |                                    | port-2/9300  | http://192.168.49.2:30858 |
+| default       | elasticsearch-master               | No node port |
+| default       | elasticsearch-master-headless      | No node port |
+| default       | fluent-bit                         | No node port |
+| default       | grafana                            | No node port |
+| default       | grafana-np                         |           80 | http://192.168.49.2:30089 |
+| default       | kibana                             |         5601 | http://192.168.49.2:31601 |
+| default       | kibana-kibana                      | No node port |
+| default       | kubernetes                         | No node port |
+| default       | prometheus-alertmanager            | No node port |
+| default       | prometheus-kube-state-metrics      | No node port |
+| default       | prometheus-node-exporter           | No node port |
+| default       | prometheus-pushgateway             | No node port |
+| default       | prometheus-server                  | No node port |
+| default       | prometheus-server-np               |           80 | http://192.168.49.2:31641 |
+| ingress-nginx | ingress-nginx-controller           | http/80      | http://192.168.49.2:30222 |
+|               |                                    | https/443    | http://192.168.49.2:30390 |
+| ingress-nginx | ingress-nginx-controller-admission | No node port |
+| kube-system   | kube-dns                           | No node port |
+| prova         | simpleapp                          | No node port |
+|---------------|------------------------------------|--------------|---------------------------|

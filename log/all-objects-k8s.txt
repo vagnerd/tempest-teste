@@ -1,0 +1,78 @@
+NAMESPACE       NAME                                                 READY   STATUS      RESTARTS   AGE
+default         pod/elasticsearch-master-0                           1/1     Running     0          7m33s
+default         pod/elasticsearch-master-1                           1/1     Running     0          7m33s
+default         pod/elasticsearch-master-2                           1/1     Running     0          7m33s
+default         pod/fluent-bit-t474p                                 1/1     Running     0          14m
+default         pod/grafana-866bf776c7-mt49x                         1/1     Running     1          67m
+default         pod/kibana-kibana-56fb984b4d-zhhtl                   0/1     Running     0          5m14s
+default         pod/prometheus-alertmanager-58666cd457-2rd2g         2/2     Running     2          75m
+default         pod/prometheus-kube-state-metrics-5b8f9bdbbd-dj67h   1/1     Running     2          75m
+default         pod/prometheus-node-exporter-cthjb                   1/1     Running     1          75m
+default         pod/prometheus-pushgateway-55b7f76c47-66sc9          1/1     Running     2          75m
+default         pod/prometheus-server-648894fdf8-jfh5h               2/2     Running     3          75m
+ingress-nginx   pod/ingress-nginx-admission-create-drzgs             0/1     Completed   0          89m
+ingress-nginx   pod/ingress-nginx-admission-patch-zq4pz              0/1     Completed   1          89m
+ingress-nginx   pod/ingress-nginx-controller-5d88495688-jl9bs        1/1     Running     1          89m
+kube-system     pod/coredns-74ff55c5b-fwxrb                          1/1     Running     1          123m
+kube-system     pod/etcd-minikube                                    1/1     Running     1          123m
+kube-system     pod/kube-apiserver-minikube                          1/1     Running     1          123m
+kube-system     pod/kube-controller-manager-minikube                 1/1     Running     1          123m
+kube-system     pod/kube-proxy-24qjp                                 1/1     Running     1          123m
+kube-system     pod/kube-scheduler-minikube                          1/1     Running     1          123m
+kube-system     pod/storage-provisioner                              1/1     Running     4          123m
+prova           pod/simpleapp-65c4757fd7-xgl56                       1/1     Running     1          85m
+
+NAMESPACE       NAME                                         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                         AGE
+default         service/elasticsearch                        NodePort    10.103.55.155    <none>        9200:32177/TCP,9300:30858/TCP   20m
+default         service/elasticsearch-master                 ClusterIP   10.111.254.211   <none>        9200/TCP,9300/TCP               7m34s
+default         service/elasticsearch-master-headless        ClusterIP   None             <none>        9200/TCP,9300/TCP               7m34s
+default         service/fluent-bit                           ClusterIP   10.102.122.71    <none>        2020/TCP                        14m
+default         service/grafana                              ClusterIP   10.106.166.221   <none>        80/TCP                          67m
+default         service/grafana-np                           NodePort    10.98.172.17     <none>        80:30089/TCP                    67m
+default         service/kibana                               NodePort    10.103.197.172   <none>        5601:31601/TCP                  4m27s
+default         service/kibana-kibana                        ClusterIP   10.101.60.41     <none>        5601/TCP                        5m15s
+default         service/kubernetes                           ClusterIP   10.96.0.1        <none>        443/TCP                         124m
+default         service/prometheus-alertmanager              ClusterIP   10.106.188.42    <none>        80/TCP                          75m
+default         service/prometheus-kube-state-metrics        ClusterIP   10.109.84.17     <none>        8080/TCP                        75m
+default         service/prometheus-node-exporter             ClusterIP   None             <none>        9100/TCP                        75m
+default         service/prometheus-pushgateway               ClusterIP   10.102.38.192    <none>        9091/TCP                        75m
+default         service/prometheus-server                    ClusterIP   10.107.127.115   <none>        80/TCP                          75m
+default         service/prometheus-server-np                 NodePort    10.107.130.137   <none>        80:31641/TCP                    75m
+ingress-nginx   service/ingress-nginx-controller             NodePort    10.96.89.54      <none>        80:30222/TCP,443:30390/TCP      89m
+ingress-nginx   service/ingress-nginx-controller-admission   ClusterIP   10.106.192.167   <none>        443/TCP                         89m
+kube-system     service/kube-dns                             ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP          123m
+prova           service/simpleapp                            ClusterIP   10.104.0.109     <none>        8080/TCP                        84m
+
+NAMESPACE     NAME                                      DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+default       daemonset.apps/fluent-bit                 1         1         1       1            1           <none>                   14m
+default       daemonset.apps/prometheus-node-exporter   1         1         1       1            1           <none>                   75m
+kube-system   daemonset.apps/kube-proxy                 1         1         1       1            1           kubernetes.io/os=linux   123m
+
+NAMESPACE       NAME                                            READY   UP-TO-DATE   AVAILABLE   AGE
+default         deployment.apps/grafana                         1/1     1            1           67m
+default         deployment.apps/kibana-kibana                   0/1     1            0           5m14s
+default         deployment.apps/prometheus-alertmanager         1/1     1            1           75m
+default         deployment.apps/prometheus-kube-state-metrics   1/1     1            1           75m
+default         deployment.apps/prometheus-pushgateway          1/1     1            1           75m
+default         deployment.apps/prometheus-server               1/1     1            1           75m
+ingress-nginx   deployment.apps/ingress-nginx-controller        1/1     1            1           89m
+kube-system     deployment.apps/coredns                         1/1     1            1           123m
+prova           deployment.apps/simpleapp                       1/1     1            1           85m
+
+NAMESPACE       NAME                                                       DESIRED   CURRENT   READY   AGE
+default         replicaset.apps/grafana-866bf776c7                         1         1         1       67m
+default         replicaset.apps/kibana-kibana-56fb984b4d                   1         1         0       5m14s
+default         replicaset.apps/prometheus-alertmanager-58666cd457         1         1         1       75m
+default         replicaset.apps/prometheus-kube-state-metrics-5b8f9bdbbd   1         1         1       75m
+default         replicaset.apps/prometheus-pushgateway-55b7f76c47          1         1         1       75m
+default         replicaset.apps/prometheus-server-648894fdf8               1         1         1       75m
+ingress-nginx   replicaset.apps/ingress-nginx-controller-5d88495688        1         1         1       89m
+kube-system     replicaset.apps/coredns-74ff55c5b                          1         1         1       123m
+prova           replicaset.apps/simpleapp-65c4757fd7                       1         1         1       85m
+
+NAMESPACE   NAME                                    READY   AGE
+default     statefulset.apps/elasticsearch-master   3/3     7m34s
+
+NAMESPACE       NAME                                       COMPLETIONS   DURATION   AGE
+ingress-nginx   job.batch/ingress-nginx-admission-create   1/1           10s        89m
+ingress-nginx   job.batch/ingress-nginx-admission-patch    1/1           11s        89m
