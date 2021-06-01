@@ -159,6 +159,14 @@ Os resultados estão disponiveis dentro do diretório *./log/*
 
 *Screenshots* - Screenshots com acesso as dashboards do Grafana e Kibana.
 
+Acesso a dashboard do Grafana já com a datasource do Prometheus e uma dashboard importada (*log/dashboard-grafana.json*):
+![Screenshot from 2021-05-31 20-51-00](https://user-images.githubusercontent.com/4332906/120252498-12505880-c25b-11eb-86f7-a6de5744e7fc.png)
+
+Acesso a dashboard do Kibana já consumindo o ES e apresentando o log da aplicação:
+![Screenshot from 2021-05-31 20-55-01](https://user-images.githubusercontent.com/4332906/120252499-12e8ef00-c25b-11eb-8dbf-ca02e17c5381.png)
+![Screenshot from 2021-05-31 20-55-23](https://user-images.githubusercontent.com/4332906/120252501-13818580-c25b-11eb-808c-e106f1c7e904.png)
+
+
 ## Python Boto3
 
 Não tenho conhecimentos profundos em python, optei pela linguagem por já conhecer e saber como funciona o componente boto3.
